@@ -17,42 +17,42 @@ const galleryItems = [
     category: 'fences',
     title: 'Cedar Privacy Fence',
     description: 'Custom 6-foot cedar privacy fence with lattice top',
-    image: '/images/fence.webp'
+    image: '/images/fence.jpg'
   },
   {
     id: 2,
     category: 'decks',
     title: 'Composite Deck',
     description: 'Modern composite deck with built-in seating and planters',
-    image: '/images/decks.webp'
+    image: '/images/decks.jpg'
   },
   {
     id: 3,
     category: 'concrete',
     title: 'Stamped Concrete Patio',
     description: 'Stamped concrete patio with custom coloring and border',
-    image: '/images/concrete.webp'
+    image: '/images/concrete.jpg'
   },
   {
     id: 4,
     category: 'pavers',
     title: 'Brick Paver Walkway',
     description: 'Herringbone pattern brick paver walkway with landscape lighting',
-    image: '/images/gazebo.webp'
+    image: '/images/gazebo.jpg'
   },
   {
     id: 5,
     category: 'sod',
     title: 'New Sod Installation',
     description: 'Complete yard renovation with premium Kentucky bluegrass sod',
-    image: '/images/sod.webp'
+    image: '/images/sod.jpg'
   },
   {
     id: 6,
     category: 'rocks',
     title: 'River Rock Border',
     description: 'River rock garden border with drought-resistant plants',
-    image: '/images/decorative.webp'
+    image: '/images/decorative.jpg'
   },
   {
     id: 7,
@@ -66,7 +66,7 @@ const galleryItems = [
     category: 'fences',
     title: 'Vinyl Ranch Fencing',
     description: 'White vinyl ranch-style fencing for large property',
-    image: '/images/fence.webp'
+    image: '/images/fence.jpg'
   }
 ];
 
