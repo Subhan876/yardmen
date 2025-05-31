@@ -12,7 +12,7 @@ const services = [
     icon: <Fence className="h-6 w-6" />,
     description: 'High-quality fencing solutions for privacy, security, and curb appeal.',
     types: ['Vinyl', 'Wood', 'Farm', 'Cedar', 'Chain Link'],
-    image: '/images/fence.jpg'
+    image: '/images/fence.webp'
   },
   {
     id: 'decks',
@@ -20,7 +20,7 @@ const services = [
     icon: <Building2 className="h-6 w-6" />,
     description: 'Custom decks that extend your living space into the outdoors.',
     types: ['Composite', 'Dura', 'Cedar', 'Wood'],
-    image: '/images/decks.jpg'
+    image: '/images/decks.webp'
   },
   {
     id: 'concrete',
@@ -28,7 +28,7 @@ const services = [
     icon: <Blocks className="h-6 w-6" />,
     description: 'Durable concrete solutions for pathways, patios, and more.',
     types: ['Paths', 'Patios', 'Driveways', 'Stamped Concrete'],
-    image: '/images/concrete.jpg'
+    image: '/images/concrete.webp'
   },
   {
     id: 'pavers',
@@ -36,7 +36,7 @@ const services = [
     icon: <Warehouse className="h-6 w-6" />,
     description: 'Beautiful stone pavers and custom gazebos for outdoor entertainment.',
     types: ['Brick Pavers', 'Stone Pavers', 'Wooden Gazebos', 'Aluminum Gazebos'],
-    image: '/images/gazebo.jpg'
+    image: '/images/gazebo.webp'
   },
   {
     id: 'sod',
@@ -44,7 +44,7 @@ const services = [
     icon: <Sprout className="h-6 w-6" />,
     description: 'Transform your yard with fresh, green sod for instant results.',
     types: ['Kentucky Bluegrass', 'Bermuda', 'Fescue', 'St. Augustine'],
-    image: '/images/sod.jpg'
+    image: '/images/sod.webp'
   },
   {
     id: 'rocks',
@@ -52,7 +52,7 @@ const services = [
     icon: <Mountain className="h-6 w-6" />,
     description: 'Add texture and dimension with decorative rocks and custom planters.',
     types: ['River Rock', 'Lava Rock', 'Limestone', 'Custom Planters'],
-    image: '/images/decorative.jpg'
+    image: '/images/decorative.webp'
   },
   {
     id: 'addons',

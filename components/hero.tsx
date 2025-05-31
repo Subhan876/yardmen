@@ -11,7 +11,7 @@ export function Hero() {
       <div
         className="absolute inset-0 bg-cover bg-center bg-fixed z-0"
         style={{
-          backgroundImage: "url('/images/hero-section.jpg')",
+          backgroundImage: "url('/images/hero-section.webp')",
           backgroundAttachment: "fixed",
         }}
       >
