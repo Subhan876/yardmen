@@ -60,7 +60,7 @@ const services = [
     icon: <FlowerBouquet className="h-6 w-6" />,
     description: 'Enhance your outdoor space with custom features and plantings.',
     types: ['Planter Boxes', 'Flower Beds', 'Fruit Trees', 'Ornamental Trees'],
-    image: 'https://images.pexels.com/photos/247599/pexels-photo-247599.jpeg?auto=compress&cs=tinysrgb&w=1200'
+    // image: '/images/stock-addons-image.webp' // Removed image for Backyard Add-Ons
   }
 ];
 
