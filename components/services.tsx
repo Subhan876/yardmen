@@ -29,7 +29,7 @@ const services = [
     icon: <Blocks className="h-6 w-6" />,
     description: 'Durable concrete solutions for pathways, patios, and more.',
     types: ['Paths', 'Patios', 'Driveways', 'Stamped Concrete'],
-    image: '/images/concrete.jpg'
+    image: '/images/concrete (2).jpg'
   },
   {
     id: 'pavers',
