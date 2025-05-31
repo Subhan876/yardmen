@@ -117,22 +117,12 @@ export function Contact() {
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
                   <div className="bg-forest-green/10 rounded-full p-3">
-                    <MapPin className="h-6 w-6 text-forest-green" />
-                  </div>
-                  <div>
-                    <h4 className="font-medium text-forest-green">Our Location</h4>
-                    <p className="text-forest-green/80">1234 Landscape Drive<br />Anytown, USA 12345</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start gap-4">
-                  <div className="bg-forest-green/10 rounded-full p-3">
                     <Phone className="h-6 w-6 text-forest-green" />
                   </div>
                   <div>
                     <h4 className="font-medium text-forest-green">Phone</h4>
                     <p className="text-forest-green/80">
-                      <a href="tel:+11234567890" className="hover:text-gold transition-colors">(123) 456-7890</a>
+                      <a href="tel:+15873250786" className="hover:text-gold transition-colors">(587) 325-0786</a>
                     </p>
                   </div>
                 </div>
@@ -144,7 +134,7 @@ export function Contact() {
                   <div>
                     <h4 className="font-medium text-forest-green">Email</h4>
                     <p className="text-forest-green/80">
-                      <a href="mailto:info@yardmen.com" className="hover:text-gold transition-colors">info@yardmen.com</a>
+                      <a href="mailto:yardmenltd@gmail.com" className="hover:text-gold transition-colors">yardmenltd@gmail.com</a>
                     </p>
                   </div>
                 </div>
@@ -154,12 +144,15 @@ export function Contact() {
             <div>
               <h3 className="text-2xl font-lora font-medium mb-6">Service Area</h3>
               <div className="aspect-video bg-gray-200 rounded-lg overflow-hidden">
-                {/* This would be replaced with an actual map embed */}
-                <div className="w-full h-full bg-forest-green/10 flex items-center justify-center">
-                  <p className="text-forest-green/70 text-center px-4">
-                    Service area map showing 50-mile radius around Anytown, USA
-                  </p>
-                </div>
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d144480.44182794084!2d-114.2085950299925!3d51.028678400770816!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x537170039f843fd5%3A0x266d3bb1b652b63a!2sCalgary%2C%20AB%2C%20Canada!5e0!3m2!1sen!2sus!4v1687549846193!5m2!1sen!2sus"
+                  width="100%" 
+                  height="100%" 
+                  style={{ border: 0 }} 
+                  allowFullScreen={true} 
+                  loading="lazy" 
+                  referrerPolicy="no-referrer-when-downgrade">
+                </iframe>
               </div>
             </div>
           </motion.div>
