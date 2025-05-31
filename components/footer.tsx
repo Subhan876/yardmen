@@ -75,15 +75,13 @@ export function Footer() {
           <div>
             <h3 className="text-lg font-medium mb-4">Contact Us</h3>
             <address className="not-italic">
-              <p className="text-ivory/70 mb-2">1234 Landscape Drive</p>
-              <p className="text-ivory/70 mb-4">Anytown, USA 12345</p>
               <p className="text-ivory/70 mb-2">
                 <strong>Phone:</strong>{' '}
-                <a href="tel:+11234567890" className="hover:text-gold transition-colors">(123) 456-7890</a>
+                <a href="tel:+15873250786" className="hover:text-gold transition-colors">(587) 325-0786</a>
               </p>
               <p className="text-ivory/70">
                 <strong>Email:</strong>{' '}
-                <a href="mailto:info@yardmen.com" className="hover:text-gold transition-colors">info@yardmen.com</a>
+                <a href="mailto:yardmenltd@gmail.com" className="hover:text-gold transition-colors">yardmenltd@gmail.com</a>
               </p>
             </address>
           </div>
