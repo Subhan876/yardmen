@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Fence, Building2, Blocks, Warehouse, Sprout, Mountain, Flower as FlowerBouquet } from 'lucide-react';
+import Image from 'next/image';
 
 const services = [
   {
@@ -119,14 +120,17 @@ export function Services() {
                   </ul>
                 </div>
                 <div className="overflow-hidden rounded-lg">
-                  <motion.img
-                    src={service.image}
-                    alt={service.title}
-                    className="w-full h-[400px] object-cover rounded-lg"
-                    initial={{ scale: 1 }}
-                    whileHover={{ scale: 1.05 }}
-                    transition={{ duration: 0.5 }}
-                  />
+                  {service.image && (
+                    <div className="relative w-full h-[400px]">
+                      <Image
+                        src={service.image}
+                        alt={service.title}
+                        fill={true}
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        className="object-cover rounded-lg"
+                      />
+                    </div>
+                  )}
                 </div>
               </motion.div>
             </TabsContent>
