@@ -13,7 +13,7 @@ const reviews = [
   {
     name: 'Walid Rana',
     rating: 5,
-    text: 'Gave this new and upcoming landscaping company a try after getting ridiculous quotes from other landscaping companies and I can definitely recommend these guys for the job. Shahab and Syed were very professional and helpful in their work — &ldquo;from the free quotes to the attention to detail.&rdquo; 5/5 I would recommend these guys for your landscaping needs.'
+    text: 'Gave this new and upcoming landscaping company a try after getting ridiculous quotes from other landscaping companies and I can definitely recommend these guys for the job. Shahab and Syed were very professional and helpful in their work — "from the free quotes to the attention to detail." 5/5 I would recommend these guys for your landscaping needs.'
   },
   {
     name: 'Ashu Mendhiratta',
@@ -113,7 +113,7 @@ export function Reviews() {
                     ))}
                   </div>
                   <p className="text-ivory/90 italic text-lg mb-6 font-inter">
-                    "{reviews[currentIndex].text}"
+                    {reviews[currentIndex].text}
                   </p>
                   <h3 className="text-xl font-medium font-lora text-gold">
                     {reviews[currentIndex].name}

@@ -4,10 +4,7 @@ const nextConfig = {
   images: { unoptimized: true },
   // Configure app directory and font loading
   experimental: {
-    appDir: true,
-    fontLoaders: [
-      { loader: 'default', options: { timeout: 15000 } }
-    ]
+
   },
   // Optimize chunk loading and disable cache to prevent file system issues
   webpack: (config) => {
