@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --forest-green: 148, 23%, 17%;
+  --ivory: 60, 20%, 95%;
+  --gold: 46, 57%, 52%;
+  
+  --foreground-rgb: var(--forest-green);
+  --background-rgb: var(--ivory);
+  
+  --font-lora: var(--font-lora);
+  --font-inter: var(--font-inter);
+
+  --foreground: var(--forest-green);
+  --background: var(--ivory);
+  --card: var(--ivory);
+  --card-foreground: var(--forest-green);
+  --popover: var(--ivory);
+  --popover-foreground: var(--forest-green);
+  --primary: var(--forest-green);
+  --primary-foreground: var(--ivory);
+  --secondary: var(--ivory);
+  --secondary-foreground: var(--forest-green);
+  --accent: var(--gold);
+  --accent-foreground: var(--forest-green);
+  --muted: 60, 10%, 85%;
+  --muted-foreground: 148, 10%, 30%;
+  --destructive: 0, 84.2%, 60.2%;
+  --destructive-foreground: var(--ivory);
+  --border: 148, 10%, 75%;
+  --input: 148, 10%, 75%;
+  --ring: var(--forest-green);
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-lora font-medium tracking-tight;
+  }
+  
+  p, span, a, li, button, input, textarea, select {
+    @apply font-inter;
+  }
+}
+
+@layer components {
+  .hero-text {
+    @apply text-4xl md:text-5xl lg:text-6xl font-lora font-bold text-ivory;
+  }
+  
+  .section-title {
+    @apply text-3xl md:text-4xl font-lora font-medium text-forest-green mb-6 text-center;
+  }
+  
+  .container {
+    @apply mx-auto px-5 md:px-10 max-w-7xl;
+  }
+  
+  .btn-primary {
+    @apply bg-gold text-forest-green hover:bg-gold/90 font-medium py-3 px-6 rounded-md transition-all duration-300;
+  }
+  
+  .btn-secondary {
+    @apply bg-forest-green/10 backdrop-blur-sm text-forest-green border border-forest-green/30 hover:bg-forest-green/20 font-medium py-3 px-6 rounded-md transition-all duration-300;
+  }
+  
+  .glass-card {
+    @apply bg-ivory/70 backdrop-blur-md border border-white/20 rounded-lg shadow-lg;
+  }
+  
+  .parallax-bg {
+    @apply bg-fixed bg-center bg-cover;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary) / 0.3);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary) / 0.5);
+}
