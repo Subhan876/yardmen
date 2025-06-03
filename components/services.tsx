@@ -23,11 +23,6 @@ const services = [
     image: '/images/decks.jpg'
   },
   {
-    id: 'concrete',
-    title: 'Concrete',
-    image: '/images/concrete.jpg'
-  },
-  {
     id: 'pavers',
     title: 'Pavers & Gazebos',
     image: '/images/gazebo.jpg'
