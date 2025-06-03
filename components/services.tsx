@@ -59,12 +59,13 @@ export function Services() {
           opts={{
             align: "start",
             loop: true,
+            dragFree: true,
           }}
-          className="w-full max-w-5xl mx-auto"
+          className="w-full max-w-5xl mx-auto relative touch-pan-y"
         >
-          <CarouselContent>
+          <CarouselContent className="-ml-2 md:-ml-4">
             {services.map((service) => (
-              <CarouselItem key={service.id} className="md:basis-1/2 lg:basis-1/3">
+              <CarouselItem key={service.id} className="pl-2 md:pl-4 basis-full sm:basis-1/2 lg:basis-1/3">
                 <div className="relative group overflow-hidden rounded-lg">
                   <img
                     src={service.image}
@@ -87,10 +88,11 @@ export function Services() {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className="hidden md:flex" />
-          <CarouselNext className="hidden md:flex" />
+          <div className="flex items-center justify-center gap-4 mt-8">
+            <CarouselPrevious className="static md:absolute transform-none translate-y-0 left-0 top-1/2" />
+            <CarouselNext className="static md:absolute transform-none translate-y-0 right-0 top-1/2" />
+          </div>
         </Carousel>
       </div>
     </section>
   );
-}
