@@ -171,7 +171,7 @@ export function Calculator() {
                 <Button 
                   type="submit" 
                   className="w-full bg-gold hover:bg-gold/90 text-forest-green font-medium py-6 text-lg
-                    transform transition-all duration-300 hover:scale-105 hover:shadow-[0_0_15px_rgba(212,175,55,0.3)]"
+                    transform transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(212,175,55,0.3)]"
                   disabled={isCalculating}
                 >
                   {isCalculating ? (
@@ -200,8 +200,8 @@ export function Calculator() {
                     This is a preliminary estimate. Get a precise quote from our experts.
                   </p>
                   <Button
-                    className="bg-ivory hover:bg-ivory/90 text-forest-green font-medium py-6 px-8 text-lg w-full
-                      transform transition-all duration-300 hover:scale-105 hover:shadow-[0_0_15px_rgba(255,255,255,0.2)]"
+                    className="bg-gold hover:bg-gold/90 text-forest-green font-medium py-6 px-8 text-lg w-full
+                      transform transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(212,175,55,0.3)]"
                     onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                   >
                     Get Detailed Quote

@@ -75,7 +75,8 @@ export function Services() {
                     <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                       <h3 className="text-2xl font-lora font-medium text-ivory mb-6">{service.title}</h3>
                       <Button 
-                        className="w-full bg-gold hover:bg-gold/90 text-forest-green"
+                        className="w-full bg-gold hover:bg-gold/90 text-forest-green font-medium
+                          transform transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(212,175,55,0.3)]"
                         onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                       >
                         Get Quote

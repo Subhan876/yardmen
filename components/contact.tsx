@@ -247,7 +247,8 @@ export function Contact() {
                   
                   <Button 
                     type="submit" 
-                    className="w-full bg-gold hover:bg-gold/90 text-forest-green"
+                    className="w-full bg-gold hover:bg-gold/90 text-forest-green font-medium
+                      transform transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(212,175,55,0.3)]"
                     disabled={isSubmitting}
                   >
                     {isSubmitting ? (
