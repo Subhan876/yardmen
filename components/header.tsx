@@ -9,8 +9,11 @@ import { Leaf } from 'lucide-react';
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [mounted, setMounted] = useState(false);
   
   useEffect(() => {
+    setMounted(true);
+    
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 100);
     };
@@ -30,20 +33,18 @@ export function Header() {
     { name: 'Contact', href: '#contact' },
   ];
 
+  // Default styles that match server-side rendering
+  const headerBgClass = mounted && isScrolled ? 'bg-ivory/90 shadow-md' : 'bg-transparent';
+  const textColorClass = mounted && isScrolled ? 'text-forest-green' : 'text-ivory';
+
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 py-4 px-6 md:px-10 backdrop-blur-sm transition-all duration-200 ${
-        isScrolled 
-          ? 'bg-ivory/90 shadow-md' 
-          : 'bg-transparent'
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 py-4 px-6 md:px-10 backdrop-blur-sm transition-all duration-200 ${headerBgClass}`}
     >
       <div className="flex items-center justify-between max-w-7xl mx-auto">
         <Link href="/" className="flex items-center gap-2">
           <Leaf className="h-8 w-8 text-gold" />
-          <span className={`text-2xl font-lora font-bold hidden sm:block ${
-            isScrolled ? 'text-forest-green' : 'text-ivory'
-          }`}>
+          <span className={`text-2xl font-lora font-bold hidden sm:block ${textColorClass}`}>
             Yard Men
           </span>
         </Link>
@@ -54,9 +55,7 @@ export function Header() {
             <a
               key={link.name}
               href={link.href}
-              className={`font-medium text-sm transition-colors duration-200 hover:text-gold ${
-                isScrolled ? 'text-forest-green' : 'text-ivory'
-              }`}
+              className={`font-medium text-sm transition-colors duration-200 hover:text-gold ${textColorClass}`}
             >
               {link.name}
             </a>
