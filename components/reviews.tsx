@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Star, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 const reviews = [
   {
@@ -157,6 +158,23 @@ export function Reviews() {
             ))}
           </div>
         </div>
+
+        {/* Quote Button */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="mt-16 text-center"
+        >
+          <Button
+            className="bg-gold hover:bg-gold/90 text-forest-green font-medium text-lg px-12 py-6
+              transform transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(212,175,55,0.3)]"
+            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+          >
+            Get Your Free Quote Today
+          </Button>
+        </motion.div>
       </div>
     </section>
   );
