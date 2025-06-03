@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { Facebook, Twitter, Instagram, Youtube, Leaf } from 'lucide-react';
 
 export function Footer() {
@@ -34,19 +33,19 @@ export function Footer() {
             <h3 className="text-lg font-medium mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="#" className="text-ivory/70 hover:text-gold transition-colors">Home</Link>
+                <a href="#" className="text-ivory/70 hover:text-gold transition-colors">Home</a>
               </li>
               <li>
-                <Link href="#services" className="text-ivory/70 hover:text-gold transition-colors">Services</Link>
+                <a href="#services" className="text-ivory/70 hover:text-gold transition-colors">Services</a>
               </li>
               <li>
-                <Link href="#gallery" className="text-ivory/70 hover:text-gold transition-colors">Gallery</Link>
+                <a href="#gallery" className="text-ivory/70 hover:text-gold transition-colors">Gallery</a>
               </li>
               <li>
-                <Link href="#about" className="text-ivory/70 hover:text-gold transition-colors">About Us</Link>
+                <a href="#about" className="text-ivory/70 hover:text-gold transition-colors">About Us</a>
               </li>
               <li>
-                <Link href="#contact" className="text-ivory/70 hover:text-gold transition-colors">Contact</Link>
+                <a href="#contact" className="text-ivory/70 hover:text-gold transition-colors">Contact</a>
               </li>
             </ul>
           </div>
@@ -55,19 +54,19 @@ export function Footer() {
             <h3 className="text-lg font-medium mb-4">Services</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="#services" className="text-ivory/70 hover:text-gold transition-colors">Fences</Link>
+                <a href="#services" className="text-ivory/70 hover:text-gold transition-colors">Fences</a>
               </li>
               <li>
-                <Link href="#services" className="text-ivory/70 hover:text-gold transition-colors">Decks</Link>
+                <a href="#services" className="text-ivory/70 hover:text-gold transition-colors">Decks</a>
               </li>
               <li>
-                <Link href="#services" className="text-ivory/70 hover:text-gold transition-colors">Concrete Work</Link>
+                <a href="#services" className="text-ivory/70 hover:text-gold transition-colors">Concrete Work</a>
               </li>
               <li>
-                <Link href="#services" className="text-ivory/70 hover:text-gold transition-colors">Pavers & Gazebos</Link>
+                <a href="#services" className="text-ivory/70 hover:text-gold transition-colors">Pavers & Gazebos</a>
               </li>
               <li>
-                <Link href="#services" className="text-ivory/70 hover:text-gold transition-colors">Sod Installation</Link>
+                <a href="#services" className="text-ivory/70 hover:text-gold transition-colors">Sod Installation</a>
               </li>
             </ul>
           </div>
@@ -94,8 +93,8 @@ export function Footer() {
             &copy; {new Date().getFullYear()} Yard Men Landscaping. All rights reserved.
           </p>
           <div className="flex space-x-4 mt-4 md:mt-0">
-            <Link href="#" className="text-ivory/60 hover:text-gold text-sm transition-colors">Privacy Policy</Link>
-            <Link href="#" className="text-ivory/60 hover:text-gold text-sm transition-colors">Terms of Service</Link>
+            <a href="/privacy" className="text-ivory/60 hover:text-gold text-sm transition-colors">Privacy Policy</a>
+            <a href="/terms" className="text-ivory/60 hover:text-gold text-sm transition-colors">Terms of Service</a>
           </div>
         </div>
       </div>
