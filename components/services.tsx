@@ -2,15 +2,19 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Fence, Building2, Blocks, Warehouse, Sprout, Mountain, Flower as FlowerBouquet } from 'lucide-react';
-import Image from 'next/image';
+import { Button } from '@/components/ui/button';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const services = [
   {
     id: 'fences',
     title: 'Fences',
-    icon: <Fence className="h-6 w-6" />,
     description: 'High-quality fencing solutions for privacy, security, and curb appeal.',
     types: ['Vinyl', 'Wood', 'Farm', 'Cedar', 'Chain Link'],
     image: '/images/fence.jpg'
@@ -18,7 +22,6 @@ const services = [
   {
     id: 'decks',
     title: 'Decks',
-    icon: <Building2 className="h-6 w-6" />,
     description: 'Custom decks that extend your living space into the outdoors.',
     types: ['Composite', 'Dura', 'Cedar', 'Wood'],
     image: '/images/decks.jpg'
@@ -26,15 +29,13 @@ const services = [
   {
     id: 'concrete',
     title: 'Concrete',
-    icon: <Blocks className="h-6 w-6" />,
     description: 'Durable concrete solutions for pathways, patios, and more.',
     types: ['Paths', 'Patios', 'Driveways', 'Stamped Concrete'],
-    image: '/images/concrete (2).jpg'
+    image: '/images/concrete.jpg'
   },
   {
     id: 'pavers',
     title: 'Pavers & Gazebos',
-    icon: <Warehouse className="h-6 w-6" />,
     description: 'Beautiful stone pavers and custom gazebos for outdoor entertainment.',
     types: ['Brick Pavers', 'Stone Pavers', 'Wooden Gazebos', 'Aluminum Gazebos'],
     image: '/images/gazebo.jpg'
@@ -42,7 +43,6 @@ const services = [
   {
     id: 'sod',
     title: 'Sod Installation',
-    icon: <Sprout className="h-6 w-6" />,
     description: 'Transform your yard with fresh, green sod for instant results.',
     types: ['Kentucky Bluegrass', 'Bermuda', 'Fescue', 'St. Augustine'],
     image: '/images/sod.jpg'
@@ -50,26 +50,15 @@ const services = [
   {
     id: 'rocks',
     title: 'Decorative Rocks & Planters',
-    icon: <Mountain className="h-6 w-6" />,
     description: 'Add texture and dimension with decorative rocks and custom planters.',
     types: ['River Rock', 'Lava Rock', 'Limestone', 'Custom Planters'],
     image: '/images/decorative.jpg'
-  },
-  {
-    id: 'addons',
-    title: 'Backyard Add-Ons',
-    icon: <FlowerBouquet className="h-6 w-6" />,
-    description: 'Enhance your outdoor space with custom features and plantings.',
-    types: ['Planter Boxes', 'Flower Beds', 'Fruit Trees', 'Ornamental Trees'],
-    // image: '/images/stock-addons-image.webp' // Removed image for Backyard Add-Ons
   }
 ];
 
 export function Services() {
-  const [activeTab, setActiveTab] = useState('fences');
-  
   return (
-    <section id="services\" className="py-20 bg-ivory">
+    <section id="services" className="py-20 bg-ivory">
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -79,63 +68,52 @@ export function Services() {
         >
           <h2 className="section-title">Our Services</h2>
           <p className="text-center text-forest-green/80 max-w-3xl mx-auto mb-12">
-            From fencing and decks to sod installation and decorative features, we offer a comprehensive range of professional landscaping services to transform your outdoor space.
+            From fencing and decks to sod installation and decorative features, we offer a comprehensive range of professional landscaping services.
           </p>
         </motion.div>
 
-        <Tabs defaultValue="fences" value={activeTab} onValueChange={setActiveTab} className="w-full">
-          <TabsList className="flex flex-wrap justify-center mb-8 bg-transparent h-auto">
+        <Carousel
+          opts={{
+            align: "start",
+            loop: true,
+          }}
+          className="w-full max-w-5xl mx-auto"
+        >
+          <CarouselContent>
             {services.map((service) => (
-              <TabsTrigger 
-                key={service.id}
-                value={service.id}
-                className="data-[state=active]:bg-forest-green data-[state=active]:text-ivory rounded-md flex items-center gap-2 m-1 px-4 py-2"
-              >
-                {service.icon}
-                <span className="hidden md:inline">{service.title}</span>
-              </TabsTrigger>
-            ))}
-          </TabsList>
-          
-          {services.map((service) => (
-            <TabsContent key={service.id} value={service.id} className="mt-0">
-              <motion.div 
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.5 }}
-                className="grid md:grid-cols-2 gap-8 items-center"
-              >
-                <div className="bg-forest-green/5 p-8 rounded-lg">
-                  <h3 className="text-2xl font-lora font-medium mb-4 text-forest-green">{service.title}</h3>
-                  <p className="mb-6 text-forest-green/80">{service.description}</p>
-                  
-                  <h4 className="text-lg font-medium mb-3">Types:</h4>
-                  <ul className="grid grid-cols-2 gap-x-4 gap-y-2">
-                    {service.types.map((type, index) => (
-                      <li key={index} className="flex items-center gap-2">
-                        <div className="w-2 h-2 rounded-full bg-gold"></div>
-                        <span>{type}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div className="overflow-hidden rounded-lg">
-                  {service.image && (
-                    <div className="relative w-full h-[400px]">
-                      <Image
-                        src={service.image}
-                        alt={service.title}
-                        fill={true}
-                        sizes="(max-width: 768px) 100vw, 50vw"
-                        className="object-cover rounded-lg"
-                      />
+              <CarouselItem key={service.id} className="md:basis-1/2 lg:basis-1/3">
+                <div className="relative group overflow-hidden rounded-lg">
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-forest-green/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                      <h3 className="text-2xl font-lora font-medium text-ivory mb-2">{service.title}</h3>
+                      <p className="text-ivory/90 mb-4">{service.description}</p>
+                      <div className="flex flex-wrap gap-2 mb-4">
+                        {service.types.map((type, index) => (
+                          <span key={index} className="text-sm bg-gold/20 text-ivory px-2 py-1 rounded">
+                            {type}
+                          </span>
+                        ))}
+                      </div>
+                      <Button 
+                        className="w-full bg-gold hover:bg-gold/90 text-forest-green"
+                        onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                      >
+                        Get Quote
+                      </Button>
                     </div>
-                  )}
+                  </div>
                 </div>
-              </motion.div>
-            </TabsContent>
-          ))}
-        </Tabs>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious className="hidden md:flex" />
+          <CarouselNext className="hidden md:flex" />
+        </Carousel>
       </div>
     </section>
   );
