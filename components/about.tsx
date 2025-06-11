@@ -65,7 +65,7 @@ export function About() {
             <div className="flex flex-wrap gap-4 pt-4">
               <div className="flex items-center gap-2">
                 <div className="w-12 h-12 rounded-full bg-gold flex items-center justify-center">
-                  <span className="text-forest-green font-bold text-xl">250+</span>
+                  <span className="text-forest-green font-bold text-xl">1000+</span>
                 </div>
                 <span className="text-forest-green font-medium">Projects Completed</span>
               </div>

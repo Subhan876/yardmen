@@ -70,7 +70,7 @@ export function Hero() {
 
           {/* Trust Indicators */}
           <div className="flex flex-wrap justify-center gap-6 mt-12">
-            {['15+ Years Experience', '250+ Projects Completed', '100% Satisfaction'].map((text, index) => (
+            {['15+ Years Experience', '1000+ Projects Completed', '100% Satisfaction'].map((text, index) => (
               <div key={index} className="flex items-center gap-2">
                 <div className="w-2 h-2 rounded-full bg-gold"></div>
                 <span className="text-ivory/80 font-inter text-sm md:text-base">{text}</span>
