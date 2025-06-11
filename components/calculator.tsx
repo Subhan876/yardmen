@@ -55,37 +55,42 @@ export function Calculator() {
     setTimeout(() => {
       const yardSize = parseInt(values.yardSize);
       
-      let basePrice = 0;
-      let pricePerSqFt = 0;
+      let lowPrice = 0;
+      let highPrice = 0;
       
-      // Calculate base price based on service type
+      // Calculate price based on service type using new pricing structure
       switch (values.serviceType) {
         case 'fence':
-          pricePerSqFt = 15;
+          lowPrice = yardSize * 35;
+          highPrice = yardSize * 65;
           break;
         case 'deck':
-          pricePerSqFt = 30;
+          lowPrice = yardSize * 25;
+          highPrice = yardSize * 70;
           break;
         case 'concrete':
-          pricePerSqFt = 12;
+          lowPrice = yardSize * 10;
+          highPrice = yardSize * 30;
           break;
         case 'pavers':
-          pricePerSqFt = 18;
+          lowPrice = yardSize * 18;
+          highPrice = yardSize * 40;
           break;
         case 'sod':
-          pricePerSqFt = 2;
+          lowPrice = yardSize * 1.15;
+          highPrice = yardSize * 2.30;
           break;
         case 'rocks':
-          pricePerSqFt = 6;
+          lowPrice = yardSize * 4;
+          highPrice = yardSize * 18;
           break;
         default:
-          pricePerSqFt = 10;
+          lowPrice = yardSize * 10;
+          highPrice = yardSize * 30;
       }
       
-      basePrice = yardSize * pricePerSqFt;
-      
-      const totalLow = Math.round(basePrice * 0.8);
-      const totalHigh = Math.round(basePrice * 1.2);
+      const totalLow = Math.round(lowPrice);
+      const totalHigh = Math.round(highPrice);
       
       setEstimate({ low: totalLow, high: totalHigh });
       setIsCalculating(false);
@@ -151,12 +156,12 @@ export function Calculator() {
                           </SelectTrigger>
                         </FormControl>
                         <SelectContent>
-                          <SelectItem value="fence">Fencing</SelectItem>
-                          <SelectItem value="deck">Deck Installation</SelectItem>
-                          <SelectItem value="concrete">Concrete Work</SelectItem>
-                          <SelectItem value="pavers">Pavers</SelectItem>
-                          <SelectItem value="sod">Sod Installation</SelectItem>
-                          <SelectItem value="rocks">Decorative Rocks</SelectItem>
+                          <SelectItem value="fence">Fencing ($35-$65/sq ft)</SelectItem>
+                          <SelectItem value="deck">Deck Installation ($25-$70/sq ft)</SelectItem>
+                          <SelectItem value="concrete">Concrete Work ($10-$30/sq ft)</SelectItem>
+                          <SelectItem value="pavers">Pavers ($18-$40/sq ft)</SelectItem>
+                          <SelectItem value="sod">Sod Installation ($1.15-$2.30/sq ft)</SelectItem>
+                          <SelectItem value="rocks">Decorative Rocks ($4-$18/sq ft)</SelectItem>
                         </SelectContent>
                       </Select>
                       <FormMessage className="text-red-300" />
