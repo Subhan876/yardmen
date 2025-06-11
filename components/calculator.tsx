@@ -78,9 +78,6 @@ export function Calculator() {
         case 'rocks':
           pricePerSqFt = 6;
           break;
-        case 'addons':
-          pricePerSqFt = 4;
-          break;
         default:
           pricePerSqFt = 10;
       }
@@ -157,10 +154,9 @@ export function Calculator() {
                           <SelectItem value="fence">Fencing</SelectItem>
                           <SelectItem value="deck">Deck Installation</SelectItem>
                           <SelectItem value="concrete">Concrete Work</SelectItem>
-                          <SelectItem value="pavers">Pavers & Gazebos</SelectItem>
+                          <SelectItem value="pavers">Pavers</SelectItem>
                           <SelectItem value="sod">Sod Installation</SelectItem>
                           <SelectItem value="rocks">Decorative Rocks</SelectItem>
-                          <SelectItem value="addons">Backyard Add-Ons</SelectItem>
                         </SelectContent>
                       </Select>
                       <FormMessage className="text-red-300" />
