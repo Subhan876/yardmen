@@ -25,13 +25,29 @@ export function Header() {
   const navLinks = [
     { name: 'Home', href: '#' },
     { name: 'Services', href: '#services' },
-    { name: 'Gallery', href: '#gallery' },
+    { name: 'Calculator', href: '#calculator' },
+    { name: 'Reviews', href: '#reviews' },
     { name: 'FAQ', href: '#faq' },
-    { name: 'Suppliers', href: '#suppliers' },
-    { name: 'About', href: '#about' },
-    { name: 'Why Choose', href: '#why-choose' },
+    { name: 'Why Choose Us', href: '#why-choose' },
     { name: 'Contact', href: '#contact' },
   ];
+
+  const handleNavClick = (href: string) => {
+    setIsOpen(false);
+    
+    if (href === '#') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+    
+    // Small delay to allow sheet to close first
+    setTimeout(() => {
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 100);
+  };
 
   // Default styles that match server-side rendering
   const headerBgClass = mounted && isScrolled ? 'bg-ivory/90 shadow-md' : 'bg-transparent';
@@ -52,13 +68,13 @@ export function Header() {
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-6">
           {navLinks.map((link) => (
-            <a
+            <button
               key={link.name}
-              href={link.href}
+              onClick={() => handleNavClick(link.href)}
               className={`font-medium text-sm transition-colors duration-200 hover:text-gold ${textColorClass}`}
             >
               {link.name}
-            </a>
+            </button>
           ))}
         </nav>
 
@@ -94,18 +110,20 @@ export function Header() {
           <SheetContent side="right" className="bg-ivory w-[300px]">
             <nav className="flex flex-col space-y-4 mt-10">
               {navLinks.map((link) => (
-                <a
+                <button
                   key={link.name}
-                  href={link.href}
-                  className="text-forest-green hover:text-gold py-2 text-lg font-medium transition-colors"
-                  onClick={() => setIsOpen(false)}
+                  onClick={() => handleNavClick(link.href)}
+                  className="text-forest-green hover:text-gold py-2 text-lg font-medium transition-colors text-left"
                 >
                   {link.name}
-                </a>
+                </button>
               ))}
               <Button 
                 className="bg-gold hover:bg-gold/90 text-forest-green font-medium mt-4"
-                onClick={() => window.location.href = 'tel:+15873250786'}
+                onClick={() => {
+                  setIsOpen(false);
+                  window.location.href = 'tel:+15873250786';
+                }}
               >
                 Call Now
               </Button>
