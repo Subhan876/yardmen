@@ -13,7 +13,7 @@ const stats = [
   },
   {
     title: "Projects Completed",
-    value: "250+",
+    value: "1000+",
     icon: <Trophy className="h-8 w-8 text-gold" />,
     description: "Transforming yards across the region"
   },
