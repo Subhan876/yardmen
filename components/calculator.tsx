@@ -26,7 +26,7 @@ import { Loader2 } from 'lucide-react';
 
 const formSchema = z.object({
   yardSize: z.string().min(1, {
-    message: 'Please enter your yard size.',
+    message: 'Please enter the measurement.',
   }),
   serviceType: z.string().min(1, {
     message: 'Please select a service type.',
@@ -47,13 +47,18 @@ export function Calculator() {
     },
   });
 
+  const selectedService = form.watch('serviceType');
+  const isFence = selectedService === 'fence';
+  const measurementLabel = isFence ? 'Linear Feet' : 'Square Feet';
+  const measurementPlaceholder = isFence ? 'e.g., 100' : 'e.g., 1000';
+
   function onSubmit(values: FormValues) {
     setIsCalculating(true);
     setEstimate(null);
     
     // Simulate API call delay
     setTimeout(() => {
-      const yardSize = parseInt(values.yardSize);
+      const measurement = parseInt(values.yardSize);
       
       let lowPrice = 0;
       let highPrice = 0;
@@ -61,32 +66,28 @@ export function Calculator() {
       // Calculate price based on service type using new pricing structure
       switch (values.serviceType) {
         case 'fence':
-          lowPrice = yardSize * 35;
-          highPrice = yardSize * 65;
+          lowPrice = measurement * 35;
+          highPrice = measurement * 65;
           break;
         case 'deck':
-          lowPrice = yardSize * 25;
-          highPrice = yardSize * 70;
-          break;
-        case 'concrete':
-          lowPrice = yardSize * 10;
-          highPrice = yardSize * 30;
-          break;
-        case 'pavers':
-          lowPrice = yardSize * 18;
-          highPrice = yardSize * 40;
+          lowPrice = measurement * 25;
+          highPrice = measurement * 70;
           break;
         case 'sod':
-          lowPrice = yardSize * 1.15;
-          highPrice = yardSize * 2.30;
+          lowPrice = measurement * 1.15;
+          highPrice = measurement * 2.30;
+          break;
+        case 'mulch':
+          lowPrice = measurement * 3;
+          highPrice = measurement * 8;
           break;
         case 'rocks':
-          lowPrice = yardSize * 4;
-          highPrice = yardSize * 18;
+          lowPrice = measurement * 4;
+          highPrice = measurement * 18;
           break;
         default:
-          lowPrice = yardSize * 10;
-          highPrice = yardSize * 30;
+          lowPrice = measurement * 10;
+          highPrice = measurement * 30;
       }
       
       const totalLow = Math.round(lowPrice);
@@ -126,25 +127,6 @@ export function Calculator() {
               <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
                 <FormField
                   control={form.control}
-                  name="yardSize"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel className="text-ivory">Yard Size (sq ft)</FormLabel>
-                      <FormControl>
-                        <Input 
-                          type="number" 
-                          placeholder="e.g., 1000" 
-                          {...field} 
-                          className="bg-ivory/20 border-ivory/30 text-ivory placeholder:text-ivory/50"
-                        />
-                      </FormControl>
-                      <FormMessage className="text-red-300" />
-                    </FormItem>
-                  )}
-                />
-                
-                <FormField
-                  control={form.control}
                   name="serviceType"
                   render={({ field }) => (
                     <FormItem>
@@ -156,14 +138,32 @@ export function Calculator() {
                           </SelectTrigger>
                         </FormControl>
                         <SelectContent>
-                          <SelectItem value="fence">Fencing ($35-$65/sq ft)</SelectItem>
-                          <SelectItem value="deck">Deck Installation ($25-$70/sq ft)</SelectItem>
-                          <SelectItem value="concrete">Concrete Work ($10-$30/sq ft)</SelectItem>
-                          <SelectItem value="pavers">Pavers ($18-$40/sq ft)</SelectItem>
+                          <SelectItem value="fence">Fencing ($35-$65/linear ft)</SelectItem>
                           <SelectItem value="sod">Sod Installation ($1.15-$2.30/sq ft)</SelectItem>
+                          <SelectItem value="deck">Deck Installation ($25-$70/sq ft)</SelectItem>
+                          <SelectItem value="mulch">Mulch ($3-$8/sq ft)</SelectItem>
                           <SelectItem value="rocks">Decorative Rocks ($4-$18/sq ft)</SelectItem>
                         </SelectContent>
                       </Select>
+                      <FormMessage className="text-red-300" />
+                    </FormItem>
+                  )}
+                />
+
+                <FormField
+                  control={form.control}
+                  name="yardSize"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel className="text-ivory">{measurementLabel}</FormLabel>
+                      <FormControl>
+                        <Input 
+                          type="number" 
+                          placeholder={measurementPlaceholder}
+                          {...field} 
+                          className="bg-ivory/20 border-ivory/30 text-ivory placeholder:text-ivory/50"
+                        />
+                      </FormControl>
                       <FormMessage className="text-red-300" />
                     </FormItem>
                   )}
@@ -210,6 +210,12 @@ export function Calculator() {
                 </div>
               </motion.div>
             )}
+
+            <div className="mt-6 p-4 bg-ivory/5 rounded-lg border border-ivory/10">
+              <p className="text-ivory/70 text-sm text-center">
+                <strong>Note:</strong> Fence estimates are calculated per linear foot. All other services are estimated per square foot.
+              </p>
+            </div>
           </motion.div>
         </div>
       </div>
