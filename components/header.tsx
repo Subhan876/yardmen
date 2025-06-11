@@ -65,7 +65,7 @@ export function Header() {
         {/* Call Now Button */}
         <Button 
           className="hidden md:flex bg-gold hover:bg-gold/90 text-forest-green font-medium"
-          onClick={() => window.location.href = 'tel:+11234567890'}
+          onClick={() => window.location.href = 'tel:+15873250786'}
         >
           Call Now
         </Button>
@@ -105,7 +105,7 @@ export function Header() {
               ))}
               <Button 
                 className="bg-gold hover:bg-gold/90 text-forest-green font-medium mt-4"
-                onClick={() => window.location.href = 'tel:+11234567890'}
+                onClick={() => window.location.href = 'tel:+15873250786'}
               >
                 Call Now
               </Button>
