@@ -38,13 +38,13 @@ export function Hero() {
         >
           {/* Main Headline */}
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-lora font-bold text-ivory leading-tight">
-            Transform Your Outdoors
-            <span className="block text-gold mt-2">Into a Dream Space</span>
+            We Build It Right,
+            <span className="block text-gold mt-2">Right From the Start</span>
           </h1>
           
           {/* Enhanced Subheadline */}
           <p className="text-xl md:text-2xl text-ivory/90 max-w-3xl mx-auto mb-8 font-inter backdrop-blur-sm">
-            Elevate your property with our premium landscaping services, 
+            Transform your outdoor space with our premium landscaping services, 
             <span className="block mt-2">tailored precisely to your vision and lifestyle</span>
           </p>
           
