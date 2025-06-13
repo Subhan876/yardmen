@@ -10,7 +10,10 @@ export function Footer() {
               <Leaf className="h-8 w-8 text-gold" />
               <span className="text-2xl font-lora font-bold">Yard Men</span>
             </div>
-            <p className="text-ivory/70 mb-6">
+            <p className="text-ivory/70 mb-2">
+              We build it right, right from the start.
+            </p>
+            <p className="text-ivory/60 text-sm mb-6">
               Transforming outdoor spaces with quality craftsmanship since 2010.
             </p>
             <div className="flex space-x-4">
