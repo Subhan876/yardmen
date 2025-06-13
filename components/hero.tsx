@@ -44,8 +44,7 @@ export function Hero() {
           
           {/* Enhanced Subheadline */}
           <p className="text-xl md:text-2xl text-ivory/90 max-w-3xl mx-auto mb-8 font-inter backdrop-blur-sm">
-            Transform your outdoor space with our premium landscaping services, 
-            <span className="block mt-2">tailored precisely to your vision and lifestyle</span>
+            Transform Your Yard with Calgary's Trusted Landscaping Experts
           </p>
           
           {/* CTA Buttons */}
