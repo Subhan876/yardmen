@@ -44,7 +44,7 @@ export function Hero() {
           
           {/* Enhanced Subheadline */}
           <p className="text-xl md:text-2xl text-ivory/90 max-w-3xl mx-auto mb-8 font-inter backdrop-blur-sm">
-            Transform Your Yard with Calgary's Trusted Landscaping Experts
+            Transform Your Yard with Calgary&apos;s Trusted Landscaping Experts
           </p>
           
           {/* CTA Buttons */}
